@@ -3,19 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --overlay-opacity: 0.72;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #5c727d;
+  background-color: #f7f7f7;
+  font-family: "Roboto", sans-serif;
+}
+
+.home_banner::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: linear-gradient(180deg, #053a63 0%, #01111b 100%);
+  background-color: transparent;
+  display: block;
+  opacity: var(--overlay-opacity);
+}
+
+.property_card {
+  transition: all 0.5s; /* Single declaration for transition */
+}
+
+.property_card .property_card_image {
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.property_card:hover .property_card_image {
+  transform: scale(1.1);
+}
+
+/* swiper slide handle */
+.swiper-button-prev {
+  left: -10px !important;
+}
+
+.swiper-pagination-fraction {
+  bottom: -30px !important;
 }
