@@ -14,7 +14,7 @@ module.exports = {
           primary: "#2F2B3D",
         },
         primary: {
-          DEFAULT: "#1C2F96", // Original color
+          DEFAULT: "#0073E1", // Original color
           50: "#F2F2FB", // Lightest variant
           100: "#E1E4FA",
           200: "#BFC3F4",
