@@ -8,17 +8,20 @@ import { GoPlus } from "react-icons/go";
 import { MdLocationOn } from "react-icons/md";
 import { IoVideocamSharp } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
+import styles from "@/app/styles/Home.module.css";
 
 export default function PropertyCard({ data }) {
   return (
-    <div className="bg-white rounded-md shadow-sm overflow-hidden property_card">
+    <div
+      className={`bg-white rounded-md shadow-sm overflow-hidden ${styles.property_card}`}
+    >
       <div className="h-[200px] overflow-hidden relative">
         <Image
           width={1000}
           height={1000}
           src={data?.image}
           alt="property-image"
-          className="rounded-t-md h-full property_card_image"
+          className={`rounded-t-md h-full ${styles.property_card_image}`}
         />
 
         {/* Radial Gradient Overlay */}

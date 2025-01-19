@@ -25,10 +25,10 @@ export default function TabMenu({ data, setActiveTab, activeTab, latest }) {
         <button
           key={item.title}
           onClick={() => handleTabChange(item.title)}
-          className={`flex items-center justify-center gap-2 text-sm font-semibold transition-all duration-300 ${
+          className={`flex items-center justify-center gap-1 text-sm font-semibold transition-all duration-300 ${
             latest
               ? "rounded-[4px] w-[130px] py-[10px]"
-              : "rounded-t-md w-[100px] py-2"
+              : "rounded-t-md w-[100px] py-[11px]"
           } ${
             currentActiveTab === item.title
               ? "bg-blue-500 text-white"

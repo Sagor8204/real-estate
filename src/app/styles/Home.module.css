@@ -1,0 +1,44 @@
+.home_banner::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: linear-gradient(180deg, #053a63 0%, #01111b 100%);
+  background-color: transparent;
+  display: block;
+  opacity: var(--overlay-opacity);
+}
+
+.property_card {
+  transition: all 0.5s; /* Single declaration for transition */
+}
+
+.property_card .property_card_image {
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.property_card:hover .property_card_image {
+  transform: scale(1.1);
+}
+
+:global(.mySwiper .swiper-pagination) {
+  bottom: 0px !important;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:global(.mySwiper .swiper-wrapper) {
+  padding-bottom: 40px;
+}
+
+:global(.mySwiper .swiper-pagination-bullet) {
+  width: 10px;
+  height: 10px;
+  background-color: #0274e2;
+}
+
+.featured_properties {
+  background-image: linear-gradient(180deg, #f2f8fe 0%, #fafcff 100%);
+}
