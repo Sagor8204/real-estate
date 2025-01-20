@@ -33,7 +33,7 @@ const datas = [
 
 export default function FeaturedProperty() {
   return (
-    <div className={styles.featured_properties}>
+    <div className={styles.linear_gradient}>
       <Heading
         title="Featured Properties"
         desc="Here are two listings displayed with the featured property shortcode, which you can use when you have some special properties to present."
@@ -42,16 +42,16 @@ export default function FeaturedProperty() {
       <div className="max-w-[1030px] mx-auto flex gap-5 pb-20">
         {datas.map((data) => (
           <div
-            className="w-1/2 flex relative bg-white rounded-r-md"
+            className="w-1/2 flex relative bg-white rounded-r-md group cursor-pointer"
             key={data.title}
           >
-            <div className="w-1/2">
+            <div className="w-1/2 overflow-hidden rounded-l-md">
               <Image
                 src={data.image}
                 width={500}
                 height={500}
                 alt="featured-properties-image"
-                className="h-full object-cover rounded-l-md"
+                className="h-full object-cover rounded-l-md scale-100 group-hover:scale-110 transition-all duration-700"
               />
               <Image
                 src={data.avatar}
