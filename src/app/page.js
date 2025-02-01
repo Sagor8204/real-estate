@@ -7,6 +7,7 @@ import PropertyByCategory from "@/components/homepage/PropertyByCategory";
 import PropertyFilter from "@/components/homepage/PropertyFilter";
 import PropertyForRent from "@/components/homepage/PropertyForRent";
 import RealEstateAgents from "@/components/homepage/RealEstateAgents";
+import Schedule from "@/components/homepage/Schedule";
 import Testimonials from "@/components/homepage/Testimonials";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <FeaturedGallery />
         <RealEstateAgents />
         <Testimonials />
+        <Schedule />
       </div>
     </div>
   );
