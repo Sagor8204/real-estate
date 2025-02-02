@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import styles from "../../app/styles/Home.module.css";
 
 export default function PropertyForRent() {
   return (
@@ -18,7 +19,7 @@ export default function PropertyForRent() {
         desc="These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories."
       />
 
-      <div className="max-w-[1030px] mx-auto  relative">
+      <div className={`max-w-[1030px] mx-auto relative ${styles.properSwiper}`}>
         <Swiper
           slidesPerView={3}
           spaceBetween={20}

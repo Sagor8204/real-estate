@@ -21,7 +21,7 @@
   transform: scale(1.1);
 }
 
-:global(.mySwiper .swiper-pagination) {
+.properSwiper :global(.mySwiper .swiper-pagination) {
   bottom: 0px !important;
   gap: 10px;
   display: flex;
@@ -29,11 +29,11 @@
   justify-content: center;
 }
 
-:global(.mySwiper .swiper-wrapper) {
+.properSwiper :global(.mySwiper .swiper-wrapper) {
   padding-bottom: 40px;
 }
 
-:global(.mySwiper .swiper-pagination-bullet) {
+.properSwiper :global(.mySwiper .swiper-pagination-bullet) {
   width: 10px;
   height: 10px;
   background-color: #0274e2;
