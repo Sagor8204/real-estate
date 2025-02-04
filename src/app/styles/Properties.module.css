@@ -1,0 +1,53 @@
+.gallery_slider :global(.swiper .swiper-wrapper) {
+  height: 429px !important;
+}
+
+.gallery_slider :global(.swiper .swiper-wrapper .swiper-slide) {
+  border-radius: 6px;
+}
+
+.gallery_slider :global(.swiper .swiper-wrapper .swiper-slide img) {
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery_slider :global(.swiper-thumbs .swiper-wrapper) {
+  margin-top: 10px;
+  height: 85px !important;
+}
+
+.gallery_slider :global(.swiper-thumbs .swiper-slide) {
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.gallery_slider :global(.swiper-thumbs .swiper-slide img) {
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery_slider :global(.swiper .swiper-button-prev),
+.gallery_slider :global(.swiper .swiper-button-next) {
+  background-color: black;
+  padding: 10px 22px;
+  border-radius: 6px;
+  opacity: 0.5;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.gallery_slider :global(.swiper .swiper-button-prev::after),
+.gallery_slider :global(.swiper .swiper-button-next::after) {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.gallery_slider :global(.swiper .swiper-button-prev:hover),
+.gallery_slider :global(.swiper .swiper-button-next:hover) {
+  opacity: 1;
+}

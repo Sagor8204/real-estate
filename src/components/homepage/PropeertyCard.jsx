@@ -9,11 +9,22 @@ import { MdLocationOn } from "react-icons/md";
 import { IoVideocamSharp } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
 import styles from "@/app/styles/Home.module.css";
+import { useRouter } from "next/navigation";
 
 export default function PropertyCard({ data }) {
+  const router = useRouter();
+
+  const handleClick = (id, name) => {
+    const slug = name.toLowerCase().replace(/\s+/g, "-");
+
+    sessionStorage.setItem("property_id", id);
+    router.push(`/properties/${slug}`);
+  };
+
   return (
     <div
-      className={`bg-white rounded-md shadow-sm overflow-hidden ${styles.property_card}`}
+      onClick={() => handleClick(data.id, data.title)}
+      className={`bg-white rounded-md shadow-sm overflow-hidden cursor-pointer ${styles.property_card}`}
     >
       <div className="h-[200px] overflow-hidden relative">
         <Image

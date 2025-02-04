@@ -32,23 +32,25 @@ export default function Header() {
       }`}
     >
       <div>
-        {isScrolled ? (
-          <Image
-            src="/assets/images/logo-black.png"
-            width={200}
-            height={200}
-            alt="logo"
-            className="w-40"
-          />
-        ) : (
-          <Image
-            src="/assets/images/logo.png"
-            width={200}
-            height={200}
-            alt="logo"
-            className="w-40"
-          />
-        )}
+        <Link href="/">
+          {isScrolled ? (
+            <Image
+              src="/assets/images/logo-black.png"
+              width={200}
+              height={200}
+              alt="logo"
+              className="w-40"
+            />
+          ) : (
+            <Image
+              src="/assets/images/logo.png"
+              width={200}
+              height={200}
+              alt="logo"
+              className="w-40"
+            />
+          )}
+        </Link>
       </div>
 
       <div>
