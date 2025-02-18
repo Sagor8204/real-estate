@@ -15,7 +15,7 @@ export default function GallerySlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className={`${styles.gallery_slider} col-span-3 relative`}>
+    <div className={`${styles.gallery_slider} relative`}>
       <span className="absolute top-4 right-4 z-50 bg-primary text-white px-5 py-1 text-xs rounded-[4px]">
         Active
       </span>

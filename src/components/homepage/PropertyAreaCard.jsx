@@ -1,6 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PropertyAreaCard({ data }) {
+  const citySlug = (city) => {
+    return city
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "");
+  };
+
   return (
     <div className="flex gap-3">
       <div className="w-[80px] h-[76px]">
@@ -14,7 +22,7 @@ export default function PropertyAreaCard({ data }) {
       </div>
       <div>
         <h3 className="text-[15px] font-semibold text-gray-700 whitespace-nowrap">
-          {data.city}
+          <Link href={`/city/${citySlug(data.city)}`}>{data.city}</Link>
         </h3>
         <span className="text-sm">{data.listings} listings</span>
       </div>

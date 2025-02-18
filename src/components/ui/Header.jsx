@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <div
-      className={`fixed left-0 right-0 z-50 w-full px-14 py-5 shadow-sm flex items-center justify-between transition-all duration-300 ease-in-out ${
+      className={`fixed left-0 right-0 z-[9999] w-full px-14 py-5 shadow-sm flex items-center justify-between transition-all duration-300 ease-in-out ${
         isScrolled
           ? "top-0 bg-white text-black"
           : pathname === "/"
@@ -33,7 +33,7 @@ export default function Header() {
     >
       <div>
         <Link href="/">
-          {isScrolled ? (
+          {isScrolled || pathname === "/properties" ? (
             <Image
               src="/assets/images/logo-black.png"
               width={200}
