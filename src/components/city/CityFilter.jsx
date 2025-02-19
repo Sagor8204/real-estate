@@ -30,11 +30,8 @@ export default function CityFilter() {
 
       {/* sales section */}
       {activeTab === "Sales" && (
-        <div className="bg-white grid grid-cols-5 gap-2 py-7 px-7 rounded-md">
+        <div className="bg-white grid grid-cols-4 gap-3 py-7 rounded-md">
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Categories
-            </label>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
               <option value="property-cateogry">Property Category</option>
               <option value="condos">Condos</option>
@@ -43,31 +40,46 @@ export default function CityFilter() {
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              City
-            </label>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-              <option value="property-cateogry">Property Category</option>
+              <option value="property-cateogry">Property County</option>
               <option value="condos">Condos</option>
               <option value="houses">Houses</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Beds & Baths
-            </label>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-              <option value="property-cateogry">Property Category</option>
+              <option value="property-cateogry">Property City</option>
               <option value="condos">Condos</option>
               <option value="houses">Houses</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Price
-            </label>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Property Area</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Baths | Beds</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Property Status</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
               <option value="property-cateogry">Sale Price</option>
               <option value="condos">Condos</option>
@@ -76,18 +88,15 @@ export default function CityFilter() {
           </div>
 
           <div className="self-end">
-            <Button icon={IoIosSearch} text="Search" custom="w-full" />
+            <Button text="Search Propertites" custom="w-full" />
           </div>
         </div>
       )}
 
       {/* rentals section */}
       {activeTab === "Rentals" && (
-        <div className="bg-white grid grid-cols-5 gap-2 py-7 px-7 rounded-md">
+        <div className="bg-white grid grid-cols-4 gap-3 py-7 rounded-md">
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Categories
-            </label>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
               <option value="property-cateogry">Property Category</option>
               <option value="condos">Condos</option>
@@ -96,31 +105,46 @@ export default function CityFilter() {
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Cities
-            </label>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-              <option value="property-cateogry">Property Category</option>
+              <option value="property-cateogry">Property City</option>
               <option value="condos">Condos</option>
               <option value="houses">Houses</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Beds & Baths
-            </label>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-              <option value="property-cateogry">Property Category</option>
+              <option value="property-cateogry">Property Area</option>
               <option value="condos">Condos</option>
               <option value="houses">Houses</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Price
-            </label>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Baths | Beds</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Property Status</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Min Size</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
               <option value="property-cateogry">Rental Price</option>
               <option value="condos">Condos</option>
@@ -129,18 +153,15 @@ export default function CityFilter() {
           </div>
 
           <div className="self-end">
-            <Button icon={IoIosSearch} text="Search" custom="w-full" />
+            <Button text="Search Propertites" custom="w-full" />
           </div>
         </div>
       )}
 
       {/* invest section */}
       {activeTab === "Invest" && (
-        <div className="bg-white grid grid-cols-5 gap-2 py-7 px-7 rounded-md">
+        <div className="bg-white grid grid-cols-4 gap-2 py-7 rounded-md">
           <div className="col-span-2">
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Type Location
-            </label>
             <input
               type="text"
               placeholder="Enter and address, state, city, area, or zip code"
@@ -149,9 +170,6 @@ export default function CityFilter() {
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Beds & Baths
-            </label>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
               <option value="property-cateogry">Property Category</option>
               <option value="condos">Condos</option>
@@ -160,9 +178,30 @@ export default function CityFilter() {
           </div>
 
           <div>
-            <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
-              Price
-            </label>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Invest Price</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Baths | Beds</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
+            <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+              <option value="property-cateogry">Property Status</option>
+              <option value="condos">Condos</option>
+              <option value="houses">Houses</option>
+            </select>
+          </div>
+
+          <div>
             <select className="border py-[10px] w-full text-[13px] px-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
               <option value="property-cateogry">Invest Price</option>
               <option value="condos">Condos</option>
@@ -171,7 +210,7 @@ export default function CityFilter() {
           </div>
 
           <div className="self-end">
-            <Button icon={IoIosSearch} text="Search" custom="w-full" />
+            <Button text="Search Properties" custom="w-full" />
           </div>
         </div>
       )}
