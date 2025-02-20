@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
 export default function FeaturedGallery() {
@@ -17,9 +18,11 @@ export default function FeaturedGallery() {
         </div>
         <div className="absolute bottom-0 left-[50%] translate-x-[-50%] bg-white w-[355px] p-7 rounded-t-md h-[350px]">
           <h2 className="text-primary font-semibold">$ 770,000</h2>
-          <h1 className="text-3xl py-3 font-semibold text-black">
-            Gorgeous Home for Sale in Jersey
-          </h1>
+          <Link href={`/properties/gorgeous-home-for-sale-in-jersey`}>
+            <h1 className="text-3xl py-3 font-semibold text-black">
+              Gorgeous Home for Sale in Jersey
+            </h1>
+          </Link>
           <div className="flex items-center gap-3 font-semibold pb-3 text-black">
             <span>5 BD</span>
             <span>6 BD</span>

@@ -5,6 +5,7 @@ export default function PropertyAreaCard({ data }) {
   const citySlug = (city) => {
     return city
       .trim()
+      .toLowerCase()
       .replace(/\s+/g, "-")
       .replace(/[^\w-]+/g, "");
   };
