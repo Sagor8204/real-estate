@@ -48,7 +48,7 @@ export default function RealEstateAgents() {
         desc="With the “list agents shortcode” you can show your agents in any page, alognside with their contact details and link to their agent profile."
       />
 
-      <div className="max-w-[1030px] mx-auto grid grid-cols-3 gap-5 pb-20">
+      <div className="max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 pb-20 px-5 lg:px-0">
         {datas.map((data) => (
           <div
             className="bg-white rounded-md group cursor-pointer"

@@ -19,7 +19,9 @@ export default function TabMenu({ data, setActiveTab, activeTab, latest }) {
 
   return (
     <div
-      className={`flex justify-center ${latest ? "space-x-4" : "space-x-1"}`}
+      className={`flex justify-center flex-wrap lg:flex-nowrap ${
+        latest ? "space-x-4" : "space-x-1"
+      }`}
     >
       {data.map((item) => (
         <button

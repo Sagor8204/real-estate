@@ -20,7 +20,7 @@ export default function PropertyFilter() {
   const [activeTab, setActiveTab] = useState("Sales");
 
   return (
-    <div className="relative max-w-[1100px] mx-auto -mt-24">
+    <div className="relative max-w-[1100px] mx-auto -mt-24 px-5 lg:px-0">
       {/* tab buttons */}
       <TabMenu
         data={tabmenus}
@@ -30,7 +30,7 @@ export default function PropertyFilter() {
 
       {/* sales section */}
       {activeTab === "Sales" && (
-        <div className="bg-white grid grid-cols-5 gap-2 py-7 px-7 rounded-md shadow-custom-blue">
+        <div className="bg-white grid grid-cols-1 lg:grid-cols-5 gap-2 py-7 px-7 rounded-md shadow-custom-blue">
           <div>
             <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
               Categories
@@ -75,7 +75,7 @@ export default function PropertyFilter() {
             </select>
           </div>
 
-          <div className="self-end">
+          <div className="self-end mt-2 lg:mt-0">
             <Button icon={IoIosSearch} text="Search" custom="w-full" />
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function PropertyFilter() {
 
       {/* rentals section */}
       {activeTab === "Rentals" && (
-        <div className="bg-white grid grid-cols-5 gap-2 py-7 px-7 rounded-md shadow-custom-blue">
+        <div className="bg-white grid grid-cols-1 lg:grid-cols-5 gap-2 py-7 px-7 rounded-md shadow-custom-blue">
           <div>
             <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
               Categories
@@ -128,7 +128,7 @@ export default function PropertyFilter() {
             </select>
           </div>
 
-          <div className="self-end">
+          <div className="self-end mt-2 lg:mt-0">
             <Button icon={IoIosSearch} text="Search" custom="w-full" />
           </div>
         </div>
@@ -136,8 +136,8 @@ export default function PropertyFilter() {
 
       {/* invest section */}
       {activeTab === "Invest" && (
-        <div className="bg-white grid grid-cols-5 gap-2 py-7 px-7 rounded-md shadow-custom-blue">
-          <div className="col-span-2">
+        <div className="bg-white grid grid-cols-1 lg:grid-cols-5 gap-2 py-7 px-7 rounded-md shadow-custom-blue">
+          <div className="lg:col-span-2">
             <label className="block text-[13px] text-gray-700 mb-1 font-semibold">
               Type Location
             </label>
@@ -170,7 +170,7 @@ export default function PropertyFilter() {
             </select>
           </div>
 
-          <div className="self-end">
+          <div className="self-end mt-2 lg:mt-0">
             <Button icon={IoIosSearch} text="Search" custom="w-full" />
           </div>
         </div>

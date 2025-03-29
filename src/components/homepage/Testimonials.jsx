@@ -57,9 +57,9 @@ export default function Testimonials() {
         desc="Publish the best of your client testimonials and let the world know what a great agent or real estate agency you are. Testimonials build trust."
       />
 
-      <div className="max-w-[1030px] mx-auto pb-20 grid grid-cols-3 gap-5">
+      <div className="max-w-[1140px] mx-auto pb-20 grid grid-cols-1 lg:grid-cols-3 gap-8 px-5 lg:px-0">
         {datas.map((data) => (
-          <div className="rounded-md p-10 bg-white" key={data.name}>
+          <div className="rounded-md p-10 bg-white shadow-sm" key={data.name}>
             <div className="flex items-center gap-8 pb-6">
               <Image
                 src={data.image}

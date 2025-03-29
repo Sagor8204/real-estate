@@ -26,7 +26,7 @@ export default function PropertyCard({ data }) {
       onClick={() => handleClick(data.id, data.title)}
       className={`bg-white rounded-md shadow-sm overflow-hidden cursor-pointer ${styles.property_card}`}
     >
-      <div className="h-[200px] overflow-hidden relative">
+      <div className="h-[230px] overflow-hidden relative">
         <Image
           width={1000}
           height={1000}

@@ -13,7 +13,9 @@ export default function PropertyCategoryCard({ item, itemLen }) {
   return (
     <div
       className={`relative h-[270px] rounded-[4px] ${
-        item?.id === 1 ? "col-span-2" : item?.id === itemLen && "col-span-2"
+        item?.id === 1
+          ? "lg:col-span-2"
+          : item?.id === itemLen && "lg:col-span-2"
       }`}
     >
       <Link href={`/listings/${listSlug(item.title)}`}>

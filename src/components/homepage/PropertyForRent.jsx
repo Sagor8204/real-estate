@@ -19,10 +19,12 @@ export default function PropertyForRent() {
         desc="These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories."
       />
 
-      <div className={`max-w-[1030px] mx-auto relative ${styles.properSwiper}`}>
+      <div
+        className={`max-w-[1140px] mx-auto px-5 lg:px-0 relative ${styles.properSwiper}`}
+      >
         <Swiper
           slidesPerView={3}
-          spaceBetween={20}
+          spaceBetween={32}
           navigation={{
             nextEl: ".swiper-next-button",
             prevEl: ".swiper-prev-button",
@@ -30,6 +32,20 @@ export default function PropertyForRent() {
           pagination={{ clickable: true }}
           modules={[Pagination, Navigation]}
           loop={true}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 32,
+            },
+          }}
           className="mySwiper"
         >
           {propertiesData.map((property) => (
@@ -39,10 +55,10 @@ export default function PropertyForRent() {
           ))}
         </Swiper>
 
-        <button className="swiper-next-button absolute top-[50%] translate-y-[-50%] right-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 flex items-center justify-center border text-[#0274e2]">
+        <button className="hidden swiper-next-button absolute top-[50%] translate-y-[-50%] right-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 lg:flex items-center justify-center border text-[#0274e2]">
           <FaArrowRightLong />
         </button>
-        <button className="swiper-prev-button absolute top-[50%] translate-y-[-50%] left-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 flex items-center justify-center border text-[#0274e2]">
+        <button className="hidden swiper-prev-button absolute top-[50%] translate-y-[-50%] left-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 lg:flex items-center justify-center border text-[#0274e2]">
           <FaArrowLeftLong />
         </button>
       </div>

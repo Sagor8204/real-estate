@@ -1,14 +1,11 @@
-import Image from "next/image";
+"use client";
 import Heading from "../ui/Heading";
 import styles from "@/app/styles/Home.module.css";
-import { IoMdShare } from "react-icons/io";
-import { CiHeart } from "react-icons/ci";
-import { LiaBedSolid } from "react-icons/lia";
-import { LiaBathSolid } from "react-icons/lia";
-import { BsArrowsFullscreen } from "react-icons/bs";
+import FeaturedPropertyCard from "./FeaturedPropertyCard";
 
 const datas = [
   {
+    id: 1,
     image: "/assets/images/featured1.webp",
     avatar: "/assets/images/featured1-avatar.webp",
     type: "Active",
@@ -18,8 +15,10 @@ const datas = [
     bedroom: "5",
     bath: "3",
     sft: "250",
+    status: "Active",
   },
   {
+    id: 2,
     image: "/assets/images/featured2.webp",
     avatar: "/assets/images/featured2-avatar.webp",
     title: "Luxury villa in Rego Park",
@@ -33,68 +32,15 @@ const datas = [
 
 export default function FeaturedProperty() {
   return (
-    <div className={styles.linear_gradient}>
+    <div className={`${styles.linear_gradient} bg-primary-50`}>
       <Heading
         title="Featured Properties"
         desc="Here are two listings displayed with the featured property shortcode, which you can use when you have some special properties to present."
       />
 
-      <div className="max-w-[1030px] mx-auto flex gap-5 pb-20">
+      <div className="max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 pb-20 px-5 lg:px-0">
         {datas.map((data) => (
-          <div
-            className="w-1/2 flex relative bg-white rounded-r-md group cursor-pointer"
-            key={data.title}
-          >
-            <div className="w-1/2 overflow-hidden rounded-l-md">
-              <Image
-                src={data.image}
-                width={500}
-                height={500}
-                alt="featured-properties-image"
-                className="h-full object-cover rounded-l-md scale-100 group-hover:scale-110 transition-all duration-700"
-              />
-              <Image
-                src={data.avatar}
-                width={250}
-                height={250}
-                alt="featured-properties-avatar"
-                className="absolute left-5 bottom-5 w-12 h-12 rounded-full object-cover"
-              />
-            </div>
-            <div className="w-1/2">
-              <div className="mb-12 p-5">
-                <h2 className="text-lg font-semibold text-black pb-2">
-                  {data.title}
-                </h2>
-                <h3 className="text-primary font-semibold pb-3">
-                  $ {data.price}
-                </h3>
-                <p className="text-[15px] pb-4">{data.desc}</p>
-                <div className="flex items-center gap-5">
-                  <button className="w-7 h-7 rounded-md border flex items-center justify-center text-lg">
-                    <IoMdShare />
-                  </button>
-                  <button className="w-7 h-7 rounded-md border flex items-center justify-center text-lg">
-                    <CiHeart />
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-center justify-around border-t p-2">
-                <div className="flex gap-1 items-center">
-                  <LiaBedSolid className="text-xl" />{" "}
-                  <span className="text-xs">{data.bedroom}</span>
-                </div>
-                <div className="flex gap-1 items-center">
-                  <LiaBathSolid className="text-xl" />{" "}
-                  <span className="text-xs">{data.bath}</span>
-                </div>
-                <div className="flex gap-1 items-center">
-                  <BsArrowsFullscreen className="text-sm" />{" "}
-                  <span className="text-xs">{data.sft} ft²</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <FeaturedPropertyCard data={data} key={data.title} />
         ))}
       </div>
     </div>

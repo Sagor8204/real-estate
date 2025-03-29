@@ -59,7 +59,7 @@ export default function LatestProperties() {
         desc="These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories."
       />
 
-      <div className="max-w-[1030px] mx-auto">
+      <div className="max-w-[1140px] px-5 lg:px-0 mx-auto">
         <TabMenu
           data={tabmenus}
           activeTab={activeTab}
@@ -72,7 +72,7 @@ export default function LatestProperties() {
             <div className="loader"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-3 gap-7 mt-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-6">
             {filteredProperties.map((property) => (
               <PropertyCard key={property?.id} data={property} />
             ))}
