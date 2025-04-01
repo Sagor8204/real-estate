@@ -105,7 +105,7 @@ export default function AllDetails() {
           </button>
         </div>
         <div
-          className={`grid grid-cols-3 ransition-all duration-700 overflow-hidden ${
+          className={`grid grid-cols-1 lg:grid-cols-3 ransition-all duration-700 overflow-hidden ${
             sections.address
               ? "max-h-0 mt-0 opacity-0"
               : "max-h-96 mt-3 opacity-100"
@@ -157,7 +157,7 @@ export default function AllDetails() {
           </button>
         </div>
         <div
-          className={`grid grid-cols-3 ransition-all duration-700 overflow-hidden ${
+          className={`grid grid-cols-1 lg:grid-cols-3 ransition-all duration-700 overflow-hidden ${
             sections.details
               ? "max-h-0 mt-0 opacity-0"
               : "max-h-96 mt-3 opacity-100"
@@ -251,7 +251,7 @@ export default function AllDetails() {
           {/* Interior Details */}
           <div className="mb-4">
             <h3 className="text-[15px] text-black mb-3">Interior Details</h3>
-            <div className="grid grid-cols-2 gap-3 text-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 text-sm">
               <div className="flex items-center gap-2">
                 <FaRegCircleCheck className="text-primary" />
                 <span>Equipped Kitchen</span>
@@ -273,7 +273,7 @@ export default function AllDetails() {
           {/* Outdoor details */}
           <div className="mb-4">
             <h3 className="text-[15px] text-black mb-3">Outdor Details</h3>
-            <div className="grid grid-cols-2 gap-3 text-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 text-sm">
               <div className="flex items-center gap-2">
                 <FaRegCircleCheck className="text-primary" />
                 <span>Equipped Kitchen</span>
@@ -397,7 +397,7 @@ export default function AllDetails() {
               : "max-h-full mt-3 opacity-100"
           }`}
         >
-          <div className="w-full h-[435px] relative cursor-pointer ">
+          <div className="w-full h-[200px] lg:h-[435px] relative cursor-pointer ">
             <Image
               src="/assets/properties/property1image5.webp"
               width={1000}

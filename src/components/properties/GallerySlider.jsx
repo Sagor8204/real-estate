@@ -66,7 +66,7 @@ export default function GallerySlider() {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
+        className="mySwiper mySwiper_thumbs"
       >
         <SwiperSlide>
           <img src="/assets/properties/property1image1.webp" />

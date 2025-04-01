@@ -8,7 +8,7 @@ import ListBy from "./ListBy";
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 
-export default function PropertiesListedByCity({ listName }) {
+export default function PropertiesListedByCity({ cityName }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(propertiesData.length / itemsPerPage);
@@ -28,22 +28,22 @@ export default function PropertiesListedByCity({ listName }) {
   }
 
   return (
-    <div className="max-w-[1100px] mx-auto mb-5">
-      <div className="flex items-center text-xs gap-1 text-black py-5">
+    <div className="max-w-[1100px] mx-auto mb-5 border-t">
+      <div className="flex items-center text-xs gap-1 text-black py-5 px-5 lg:px-0">
         <span className="text-gray-600">Home</span> <IoIosArrowForward /> Jersey
         City
       </div>
       {/* City header tab menus */}
-      <div className="grid grid-cols-[2.8fr,1.2fr] gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[2.8fr,1.2fr] gap-8 items-start px-5 lg:px-0">
         <div>
           <h1 className="text-3xl font-semibold text-gray-800 pb-6">
-            Properties listed in {slugToCity(listName)}
+            Properties listed in {slugToCity(cityName)}
           </h1>
-          <div className="bg-white px-4 py-3 rounded-md">
+          <div className="bg-white lg:px-4 lg:py-3 rounded-md">
             <CityTabFilter />
           </div>
           <div className="mt-5">
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {currentItems.map((property) => (
                 <PropertyCard key={property?.id} data={property} />
               ))}

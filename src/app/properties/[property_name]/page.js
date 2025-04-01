@@ -16,20 +16,20 @@ export default function page() {
   }, []);
 
   return (
-    <div className="pt-24 pb-20 max-w-[1115px] mx-auto">
+    <div className="pt-3 lg:pt-24 pb-20 max-w-[1115px] mx-auto">
       <HeaderContent />
       {!featured ? (
-        <div className="grid grid-cols-4 gap-4 mt-8 items-start">
-          <div className="col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-8 items-start">
+          <div className="lg:col-span-3 px-5 lg:px-0">
             <GallerySlider />
             <PropertyDetails />
           </div>
-          <div className="col-span-1 relative">
+          <div className="lg:col-span-1 relative">
             <PropertyOwner />
           </div>
         </div>
       ) : (
-        <div className="mt-8 items-start">
+        <div className="mt-8 items-start px-5 lg:px-0">
           <div>
             <PropertyDetails />
           </div>

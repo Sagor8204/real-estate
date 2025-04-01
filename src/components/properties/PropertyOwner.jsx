@@ -25,7 +25,11 @@ export default function PropertyOwner() {
   };
 
   return (
-    <div className={`bg-white max-w-[270px] ${isScrolled && "fixed top-36"}`}>
+    <div
+      className={`bg-white max-w-[270px] ${
+        isScrolled && "hidden lg:fixed top-36"
+      }`}
+    >
       <div className="flex items-center text-sm">
         <div className="w-1/2 text-center bg-white py-2 font-semibold text-gray-600">
           Request Info

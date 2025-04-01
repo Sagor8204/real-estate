@@ -18,29 +18,57 @@ export default function TabMenu({ data, setActiveTab, activeTab, latest }) {
   };
 
   return (
-    <div
-      className={`flex justify-center flex-wrap lg:flex-nowrap ${
-        latest ? "space-x-4" : "space-x-1"
-      }`}
-    >
-      {data.map((item) => (
-        <button
-          key={item.title}
-          onClick={() => handleTabChange(item.title)}
-          className={`flex items-center justify-center gap-1 text-sm font-semibold transition-all duration-300 ${
-            latest
-              ? "rounded-[4px] w-[130px] py-[10px]"
-              : "rounded-t-md w-[100px] py-[11px]"
-          } ${
-            currentActiveTab === item.title
-              ? "bg-blue-500 text-white"
-              : "bg-white text-gray-600"
-          }`}
-        >
-          {item.icon && <span className="text-lg">{item.icon}</span>}
-          {item.title}
-        </button>
-      ))}
-    </div>
+    <>
+      <div
+        className={`flex justify-center ${
+          latest ? "space-x-4 hidden lg:flex" : "space-x-1"
+        }`}
+      >
+        {data.map((item) => (
+          <button
+            key={item.title}
+            onClick={() => handleTabChange(item.title)}
+            className={`flex items-center justify-center gap-1 text-sm font-semibold transition-all duration-300 ${
+              latest
+                ? "rounded-[4px] w-[130px] py-[10px]"
+                : "rounded-t-md w-[100px] py-[11px]"
+            } ${
+              currentActiveTab === item.title
+                ? "bg-blue-500 text-white"
+                : "bg-white text-gray-600"
+            }`}
+          >
+            {item.icon && <span className="text-lg">{item.icon}</span>}
+            {item.title}
+          </button>
+        ))}
+      </div>
+
+      {/* Samall device tabs for latest properties */}
+      <div className={latest ? "grid grid-cols-2 lg:hidden gap-3" : "hidden"}>
+        {data.map((item, index) => (
+          <div
+            className={`w-full ${
+              index === 2 || index == 5
+                ? "col-span-2 flex items-center justify-center"
+                : ""
+            }`}
+            key={item.title}
+          >
+            <button
+              onClick={() => handleTabChange(item.title)}
+              className={`flex border items-center justify-center gap-1 text-sm font-semibold transition-all duration-300 rounded-[4px] py-[10px] ${
+                currentActiveTab === item.title
+                  ? "bg-blue-500 text-white"
+                  : "bg-white text-gray-600"
+              } ${index === 2 || index === 5 ? "w-1/2" : "w-full"}`}
+            >
+              {item.icon && <span className="text-lg">{item.icon}</span>}
+              {item.title}
+            </button>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

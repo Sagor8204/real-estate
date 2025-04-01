@@ -155,7 +155,7 @@ export default function Header() {
             </ul>
           </div>
         </div>
-        <div>
+        <Link href="/">
           <Image
             src="/assets/images/logo.png"
             width={200}
@@ -163,7 +163,7 @@ export default function Header() {
             alt="logo"
             className="w-[190px]"
           />
-        </div>
+        </Link>
         <div className="bg-white p-1 rounded-full">
           <Image
             src="/assets/images/avatar.svg"
