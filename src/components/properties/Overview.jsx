@@ -12,7 +12,7 @@ export default function Overview() {
           <h2 className="text-gray-800 font-semibold">Overview</h2>
         </div>
         <div
-          className={`flex items-center flex-wrap gap-5 lg:gap-0 lg:flex-nowrap justify-between transition-all duration-700 overflow-hidden mt-3`}
+          className={`flex items-center flex-wrap gap-6 lg:gap-0 lg:flex-nowrap lg:justify-between transition-all duration-700 overflow-hidden mt-3`}
         >
           <div>
             <h4>Updated On:</h4>

@@ -21,7 +21,9 @@ export default function TabMenu({ data, setActiveTab, activeTab, latest }) {
     <>
       <div
         className={`flex justify-center ${
-          latest ? "space-x-4 hidden lg:flex" : "space-x-1"
+          latest
+            ? "latest_tab_large_device gap-3 lg:gap-0 lg:space-x-4"
+            : "space-x-1"
         }`}
       >
         {data.map((item) => (
@@ -45,7 +47,7 @@ export default function TabMenu({ data, setActiveTab, activeTab, latest }) {
       </div>
 
       {/* Samall device tabs for latest properties */}
-      <div className={latest ? "grid grid-cols-2 lg:hidden gap-3" : "hidden"}>
+      <div className={latest ? "latest_tab_samll_device" : "hidden"}>
         {data.map((item, index) => (
           <div
             className={`w-full ${

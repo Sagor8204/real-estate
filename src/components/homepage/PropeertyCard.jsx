@@ -26,13 +26,13 @@ export default function PropertyCard({ data }) {
       onClick={() => handleClick(data.id, data.title)}
       className={`bg-white rounded-md shadow-sm overflow-hidden cursor-pointer ${styles.property_card}`}
     >
-      <div className="h-[230px] overflow-hidden relative">
+      <div className="h-auto overflow-hidden relative">
         <Image
           width={1000}
           height={1000}
           src={data?.image}
           alt="property-image"
-          className={`rounded-t-md h-full ${styles.property_card_image}`}
+          className={`rounded-t-md h-full w-full object-cover ${styles.property_card_image}`}
         />
 
         {/* Radial Gradient Overlay */}

@@ -26,8 +26,8 @@ export default function PropertyOwner() {
 
   return (
     <div
-      className={`bg-white max-w-[270px] ${
-        isScrolled && "hidden lg:fixed top-36"
+      className={`bg-white mt-10 lg:mt-0 w-full px-5 lg:px-0 lg:max-w-[270px] ${
+        isScrolled && "relative lg:fixed lg:top-36"
       }`}
     >
       <div className="flex items-center text-sm">
@@ -88,11 +88,11 @@ export default function PropertyOwner() {
           Send Email
         </button>
 
-        <div className="flex items-center gap-2">
-          <button className="flex items-center border border-primary py-2 rounded-md w-1/2 justify-center gap-1 text-[15px]">
+        <div className="flex flex-wrap lg:flex-nowrap items-center gap-2">
+          <button className="flex items-center border border-primary py-2 rounded-md w-full lg:w-1/2 justify-center gap-1 text-[15px]">
             <IoIosCall /> Call
           </button>
-          <button className="flex items-center border border-primary py-2 rounded-md w-1/2 justify-center gap-1 text-[15px]">
+          <button className="flex items-center border border-primary py-2 rounded-md w-full lg:w-1/2 justify-center gap-1 text-[15px]">
             <FaWhatsapp /> Whatsapp
           </button>
         </div>

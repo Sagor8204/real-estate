@@ -53,7 +53,7 @@ export default function LatestProperties() {
   }, [activeTab]);
 
   return (
-    <div>
+    <div className="pb-14">
       <Heading
         title="Latest Properties"
         desc="These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories."
@@ -72,7 +72,7 @@ export default function LatestProperties() {
             <div className="loader"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
             {filteredProperties.map((property) => (
               <PropertyCard key={property?.id} data={property} />
             ))}

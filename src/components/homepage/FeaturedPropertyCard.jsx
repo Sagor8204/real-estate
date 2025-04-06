@@ -21,15 +21,15 @@ export default function FeaturedPropertyCard({ data }) {
   return (
     <div
       onClick={() => handleClick(data.id, data.title)}
-      className="flex flex-wrap lg:flex-nowrap relative bg-white rounded-r-md group shadow-sm cursor-pointer"
+      className="flex featured_property_card relative bg-white rounded-r-md group shadow-sm cursor-pointer"
     >
-      <div className="w-full lg:w-1/2 overflow-hidden rounded-l-md relative">
+      <div className="w-full lg:w-1/2 h-auto lg:h-[330px] overflow-hidden rounded-l-md relative">
         <Image
           src={data.image}
-          width={500}
-          height={500}
+          width={1000}
+          height={1000}
           alt="featured-properties-image"
-          className="h-[330px] lg:h-full object-cover rounded-md lg:rounded-l-md scale-100 group-hover:scale-110 transition-all duration-700"
+          className="w-full h-full object-cover rounded-md lg:rounded-l-md scale-100 group-hover:scale-110 transition-all duration-700"
         />
         <Image
           src={data.avatar}
@@ -44,8 +44,8 @@ export default function FeaturedPropertyCard({ data }) {
           </span>
         )}
       </div>
-      <div className="w-full lg:w-1/2">
-        <div className="lg:mb-12 p-5">
+      <div className="w-full featured_property_content lg:w-1/2">
+        <div className="p-5">
           <h2 className="text-lg font-semibold text-black pb-2">
             {data.title}
           </h2>
@@ -60,7 +60,7 @@ export default function FeaturedPropertyCard({ data }) {
             </button>
           </div>
         </div>
-        <div className="flex items-center justify-around border-t px-2 py-3 lg:py-2">
+        <div className="flex featured_property_bottom items-center border-t py-3 lg:py-2">
           <div className="flex gap-1 items-center">
             <LiaBedSolid className="text-xl" />{" "}
             <span className="text-xs">{data.bedroom}</span>

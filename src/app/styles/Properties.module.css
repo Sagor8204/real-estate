@@ -54,7 +54,7 @@
 
 @media (max-width: 1024px) {
   .gallery_slider :global(.swiper .swiper-wrapper) {
-    height: 200px !important;
+    height: auto !important;
   }
 
   .gallery_slider :global(.swiper .swiper-button-prev),

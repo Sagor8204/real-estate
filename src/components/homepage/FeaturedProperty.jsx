@@ -38,7 +38,7 @@ export default function FeaturedProperty() {
         desc="Here are two listings displayed with the featured property shortcode, which you can use when you have some special properties to present."
       />
 
-      <div className="max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 pb-20 px-5 lg:px-0">
+      <div className="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pb-20 px-5 lg:px-0">
         {datas.map((data) => (
           <FeaturedPropertyCard data={data} key={data.title} />
         ))}

@@ -4,7 +4,7 @@ import PropertyCategoryCard from "./PropertyCategoryCard";
 
 export default function PropertyByCategory() {
   return (
-    <div className="mb-20">
+    <div className="pb-20 bg-primary-50">
       <Heading
         title="Properties by Category"
         desc="Highlight the best of your properties by using the List Category shortcode. You can list specific properties categories, types, cities, areas."

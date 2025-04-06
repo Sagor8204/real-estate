@@ -12,10 +12,12 @@ export default function PropertiesByArea() {
         your choice."
       />
 
-      <div className="max-w-[1100px] grid grid-cols-1 lg:grid-cols-4 gap-5 bg-white mx-5 lg:mx-auto px-8 py-10 rounded-md">
-        {propetiesAreaData.map((property) => (
-          <PropertyAreaCard key={property.id} data={property} />
-        ))}
+      <div className="px-5">
+        <div className="max-w-[1100px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 bg-white lg:mx-auto px-8 py-12 rounded-md shadow-custom-blue">
+          {propetiesAreaData.map((property) => (
+            <PropertyAreaCard key={property.id} data={property} />
+          ))}
+        </div>
       </div>
     </div>
   );

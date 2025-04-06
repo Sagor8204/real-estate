@@ -13,7 +13,7 @@ import styles from "../../app/styles/Home.module.css";
 
 export default function PropertyForRent() {
   return (
-    <div className="pb-20 bg-white">
+    <div className="pb-20 bg-white overflow-hidden">
       <Heading
         title="Properties for Rent"
         desc="These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories."
@@ -33,11 +33,11 @@ export default function PropertyForRent() {
           modules={[Pagination, Navigation]}
           loop={true}
           breakpoints={{
-            320: {
+            0: {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            768: {
+            640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
@@ -55,10 +55,10 @@ export default function PropertyForRent() {
           ))}
         </Swiper>
 
-        <button className="hidden swiper-next-button absolute top-[50%] translate-y-[-50%] right-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 lg:flex items-center justify-center border text-[#0274e2]">
+        <button className="hidden swiper-next-button absolute top-[38%] translate-y-[-50%] right-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 lg:flex items-center justify-center border text-[#0274e2]">
           <FaArrowRightLong />
         </button>
-        <button className="hidden swiper-prev-button absolute top-[50%] translate-y-[-50%] left-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 lg:flex items-center justify-center border text-[#0274e2]">
+        <button className="hidden swiper-prev-button absolute top-[38%] translate-y-[-50%] left-[-70px] bg-[#f7f8f8] w-10 rounded-md h-10 lg:flex items-center justify-center border text-[#0274e2]">
           <FaArrowLeftLong />
         </button>
       </div>
