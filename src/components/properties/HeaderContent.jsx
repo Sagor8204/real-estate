@@ -53,7 +53,7 @@ export default function HeaderContent() {
         </div>
         <div className="flex flex-col justify-between lg:items-end">
           {/* for large device */}
-          <div className="hidden lg:flex">
+          <div className="hidden lg:flex lg:flex-col">
             <h3 className="text-primary -mb-1 lg:text-right">$ 1,098 /sq ft</h3>
             <h1 className="text-primary text-[32px] font-semibold">
               $ 860,000

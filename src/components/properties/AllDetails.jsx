@@ -6,7 +6,29 @@ import { FaRegCircleCheck } from "react-icons/fa6";
 import Image from "next/image";
 import { IoPlayCircleOutline } from "react-icons/io5";
 
+const scores = [
+  {
+    id: 1,
+    image: "/assets/properties/score1.svg",
+    title: "Very Walkable",
+    desc: "Most errands can be accomplished on foot",
+  },
+  {
+    id: 2,
+    image: "/assets/properties/score2.svg",
+    title: "Excellent Transit",
+    desc: "Transit is convenient for most trips",
+  },
+  {
+    id: 3,
+    image: "/assets/properties/score3.svg",
+    title: "Very Bikeable",
+    desc: "Biking is convenient for most trips",
+  },
+];
+
 export default function AllDetails() {
+  const [active, setActive] = useState("scores");
   const [sections, setSections] = useState({
     description: false,
     document: false,
@@ -17,10 +39,27 @@ export default function AllDetails() {
     map: false,
     virtual_tour: false,
     walkscore: false,
+    calculator: false,
+    floor_plans: false,
+  });
+  const [floorPlan, setFloorPlan] = useState({
+    floor_plan_a: false,
+    floor_plan_b: false,
   });
 
   const toggleSection = (section) => {
     setSections((prev) => ({ ...prev, [section]: !prev[section] }));
+  };
+
+  const toggleFloorPlan = (floor) => {
+    setFloorPlan((prevState) => ({
+      ...prevState,
+      [floor]: !prevState[floor],
+    }));
+  };
+
+  const walkScoreActive = (state) => {
+    setActive(state);
   };
 
   return (
@@ -501,17 +540,340 @@ export default function AllDetails() {
               : "max-h-96 mt-3 opacity-100"
           }`}
         >
-          <div>
+          <div className="p-5">
             <span className="text-2xl font-thin">
               Ferris Park 07305 Jersey City New Jersey State
             </span>
-            <div className="flex items-center gap-3 mt-1">
-              <button className="text-xs uppercase font-semibold">
+            <div className="flex items-center gap-3 mt-2">
+              <button
+                onClick={() => walkScoreActive("scores")}
+                className={`text-xs uppercase border-b-2 font-semibold pb-1 ${
+                  active === "scores" ? "border-b-primary" : "border-b-white"
+                }`}
+              >
                 SCORES
               </button>
-              <button className="text-xs uppercase font-semibold">
+              <button
+                onClick={() => walkScoreActive("nearby")}
+                className={`text-xs uppercase border-b-2 font-semibold pb-1 ${
+                  active === "nearby" ? "border-b-primary" : "border-b-white"
+                }`}
+              >
                 NEARBY
               </button>
+            </div>
+
+            {/* scores */}
+            {active === "scores" && (
+              <div>
+                {scores.map((score) => (
+                  <div key={score.id} className="flex gap-4 items-center py-2">
+                    <Image
+                      src={score.image}
+                      width={500}
+                      height={500}
+                      alt="score-image"
+                      className="w-16"
+                    />
+                    <div>
+                      <h3 className="text-sm">{score.title}</h3>
+                      <p className="text-xs">{score.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* calculator */}
+      <div className="mt-10 bg-white p-6">
+        <div
+          onClick={() => toggleSection("calculator")}
+          className="flex items-center justify-between cursor-pointer"
+        >
+          <h2 className="text-gray-800 font-semibold">Calculator</h2>
+          <button className="text-lg">
+            <IoIosArrowDown
+              className={`transform transition-transform duration-700 rotate-180 ${
+                sections.calculator ? "rotate-0" : ""
+              }`}
+            />
+          </button>
+        </div>
+        <div
+          className={`transition-all duration-700 overflow-hidden ${
+            sections.calculator
+              ? "max-h-0 mt-0 opacity-0"
+              : "max-h-96 mt-3 opacity-100"
+          }`}
+        >
+          {/* top content */}
+          <div className="flex gap-4">
+            {/* left content */}
+            <div className="w-1/2">
+              <div className="flex items-center justify-center relative">
+                <Image
+                  src="/assets/properties/download.png"
+                  width={500}
+                  height={500}
+                  alt="chart"
+                  className="w-[186px] h-[188px]"
+                />
+                <div className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]">
+                  <h3 className="text-black font-medium text-[17px] -mb-1">
+                    $ 241.20
+                  </h3>
+                  <span className="text-sm">per month</span>
+                </div>
+              </div>
+              <div className="flex items-center text-[13px] pt-3">
+                <div>
+                  <span className="w-3 h-[6px] bg-primary inline-block mr-2"></span>
+                  <span>Principal and Interest</span>
+                </div>
+                <div>
+                  <span className="w-3 h-[6px] bg-sky-400 inline-block mx-2"></span>
+                  <span>Property Tax</span>
+                </div>
+                <div>
+                  <span className="w-3 h-[6px] bg-red-500 inline-block mx-2"></span>
+                  <span>HOA fee</span>
+                </div>
+              </div>
+            </div>
+
+            {/* right content */}
+            <div className="w-1/2">
+              <div>
+                <label
+                  className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
+                  htmlFor="principal_interest"
+                >
+                  Principal and Interest
+                </label>
+                <h5 className="text-sm">$ - 833.60</h5>
+              </div>
+              <div>
+                <label
+                  className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
+                  htmlFor="property_tax"
+                >
+                  Property Tax
+                </label>
+                <input
+                  type="number"
+                  className="w-full border outline-none p-[10px] text-sm rounded-md"
+                  placeholder="1075"
+                />
+              </div>
+              <div>
+                <label
+                  className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
+                  htmlFor="homeowners_association_fee"
+                >
+                  Homeowners Association Fee
+                </label>
+                <input
+                  type="number"
+                  className="w-full border outline-none p-[10px] text-sm rounded-md"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* bottom content */}
+          <div className="flex gap-4">
+            {/* left content */}
+            <div className="w-1/2">
+              <div>
+                <label
+                  className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
+                  htmlFor="home_price"
+                >
+                  Home Price
+                </label>
+                <input
+                  type="number"
+                  className="w-full border outline-none p-[10px] rounded-md text-sm"
+                  placeholder="20000"
+                />
+              </div>
+              <div>
+                <label
+                  className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
+                  htmlFor="down_payment"
+                >
+                  Down Payment
+                </label>
+                <div className="flex">
+                  <input
+                    type="number"
+                    className="w-2/3 border outline-none p-[10px] rounded-md text-sm"
+                    placeholder="1720000"
+                  />
+                  <input
+                    type="number"
+                    className="w-1/3 border outline-none p-[10px] rounded-md text-sm"
+                    placeholder="20"
+                  />
+                </div>
+              </div>
+            </div>
+            {/* right content */}
+            <div className="w-1/2">
+              <div>
+                <label
+                  className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
+                  htmlFor="term(in_years)"
+                >
+                  Terms(*in years)
+                </label>
+                <input
+                  type="number"
+                  className="w-full border outline-none p-[10px] text-sm rounded-md"
+                  placeholder="30"
+                />
+              </div>
+              <div>
+                <label
+                  className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
+                  htmlFor="interest"
+                >
+                  Interest
+                </label>
+                <input
+                  type="number"
+                  className="w-full border outline-none p-[10px] text-sm rounded-md"
+                  placeholder="4.125"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Floor Plans */}
+      <div className="mt-10 bg-white p-6">
+        <div
+          onClick={() => toggleSection("floor_plans")}
+          className="flex items-center justify-between cursor-pointer"
+        >
+          <h2 className="text-gray-800 font-semibold">Floor Plans</h2>
+          <button className="text-lg">
+            <IoIosArrowDown
+              className={`transform transition-transform duration-700 rotate-180 ${
+                sections.floor_plans ? "rotate-0" : ""
+              }`}
+            />
+          </button>
+        </div>
+        <div
+          className={`transition-all duration-700 overflow-hidden ${
+            sections.floor_plans
+              ? "max-h-0 mt-0 opacity-0"
+              : "min-h-fit mt-3 opacity-100"
+          }`}
+        >
+          {/* floor plan A */}
+          <div className="mb-2">
+            {/* Floor plan A Button */}
+            <div
+              onClick={() => toggleFloorPlan("floor_plan_a")}
+              className="flex items-center justify-between bg-gray-50 p-3 rounded-md text-sm cursor-pointer group"
+            >
+              <span className="text-black font-medium">Floor Plan A</span>
+
+              <div className="flex items-center gap-3 group-hover:text-primary">
+                <div>
+                  <span className="font-medium">Price:</span> $ 600
+                </div>
+                <div>
+                  <span className="font-medium">Baths:</span> 7
+                </div>
+                <div>
+                  <span className="font-medium">Rooms:</span> 5
+                </div>
+                <div>
+                  <span className="font-medium">Size:</span> 200 ft2
+                </div>
+              </div>
+            </div>
+            {/* floor plan A content */}
+            <div
+              className={`transition-all duration-300 overflow-hidden ${
+                floorPlan.floor_plan_a
+                  ? "max-h-[750px] mt-3 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              <Image
+                src="/assets/properties/floor-plan-1-A.webp"
+                width={1000}
+                height={1000}
+                alt="floor-plan-a"
+              />
+              <p className="text-[15px] leading-6">
+                Inside this enchanting home, the great room enjoys a fireplace
+                and views of the rear patio. The secluded master suite at the
+                front of the home delights in tons of natural light, a splendid
+                bath, a sitting room with a fireplace, and a private lanai.
+                Three upper-level bedrooms share an optional bonus room, perfect
+                for a home gym, playroom, or studio. Click the home to see the
+                layout!
+              </p>
+            </div>
+          </div>
+
+          {/* floor plan B */}
+          <div>
+            {/* Floor plan B Button */}
+            <div
+              onClick={() => toggleFloorPlan("floor_plan_b")}
+              className="flex items-center justify-between bg-gray-50 p-3 rounded-md text-sm cursor-pointer group"
+            >
+              <span className="text-black font-medium">Floor Plan B</span>
+
+              <div className="flex items-center gap-3 group-hover:text-primary">
+                <div>
+                  <span className="font-medium">Price:</span> $ 375
+                </div>
+                <div>
+                  <span className="font-medium">Baths:</span> 2
+                </div>
+                <div>
+                  <span className="font-medium">Rooms:</span> 2
+                </div>
+                <div>
+                  <span className="font-medium">Size:</span> 135 ft2
+                </div>
+              </div>
+            </div>
+            {/* floor plan A content */}
+            <div
+              className={`transition-all duration-300 overflow-hidden ${
+                floorPlan.floor_plan_b
+                  ? "max-h-[750px] mt-3 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              <Image
+                src="/assets/properties/floor-plan-1-B.webp"
+                width={1000}
+                height={1000}
+                alt="floor-plan-b"
+              />
+              <p className="text-[15px] leading-6">
+                Living Spaces are more easily interpreted. All-In-Ones color
+                floor plan option clearly defines your listing’s living spaces,
+                making them obvious and clearly visible to your potential
+                buyers/clients. Add extra value to your services. Color
+                floor-plans show that you care about selling your client’s
+                listing; they add a premium, high value look to any listing and
+                can be used in your brochures, email and websites.
+              </p>
             </div>
           </div>
         </div>

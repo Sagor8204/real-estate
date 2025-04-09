@@ -26,8 +26,8 @@ export default function PropertyOwner() {
 
   return (
     <div
-      className={`bg-white mt-10 lg:mt-0 w-full px-5 lg:px-0 lg:max-w-[270px] ${
-        isScrolled && "relative lg:fixed lg:top-36"
+      className={`bg-white mt-10 lg:mt-0 w-full px-5 lg:px-0 lg:min-w-[270px] ${
+        isScrolled && "relative lg:fixed lg:max-w-[370.59px] lg:top-36"
       }`}
     >
       <div className="flex items-center text-sm">
@@ -38,7 +38,7 @@ export default function PropertyOwner() {
           Schedule a tour
         </div>
       </div>
-      <div className="p-5">
+      <div className="p-8">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-[75px] h-[75px]">
             <Image
