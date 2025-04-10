@@ -43,7 +43,7 @@ export default function AllDetails() {
     floor_plans: false,
   });
   const [floorPlan, setFloorPlan] = useState({
-    floor_plan_a: false,
+    floor_plan_a: true,
     floor_plan_b: false,
   });
 
@@ -510,7 +510,7 @@ export default function AllDetails() {
               src="/assets/properties/property1image5.webp"
               width={1000}
               height={1000}
-              className="rounded-lg w-full h-full"
+              className="rounded-lg w-full h-full object-cover"
               alt="property-video"
             />
             <IoPlayCircleOutline className="absolute top-[50%] left-[50%] text-7xl text-white translate-x-[-50%] translate-y-[-50%]" />
@@ -540,8 +540,8 @@ export default function AllDetails() {
               : "max-h-96 mt-3 opacity-100"
           }`}
         >
-          <div className="p-5">
-            <span className="text-2xl font-thin">
+          <div className="p-2 md:p-5">
+            <span className="text-base line-clamp-1 md:line-clamp-none md:text-2xl font-thin">
               Ferris Park 07305 Jersey City New Jersey State
             </span>
             <div className="flex items-center gap-3 mt-2">
@@ -606,13 +606,13 @@ export default function AllDetails() {
           className={`transition-all duration-700 overflow-hidden ${
             sections.calculator
               ? "max-h-0 mt-0 opacity-0"
-              : "max-h-96 mt-3 opacity-100"
+              : "max-h-fit mt-3 opacity-100"
           }`}
         >
           {/* top content */}
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             {/* left content */}
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <div className="flex items-center justify-center relative">
                 <Image
                   src="/assets/properties/download.png"
@@ -628,16 +628,16 @@ export default function AllDetails() {
                   <span className="text-sm">per month</span>
                 </div>
               </div>
-              <div className="flex items-center text-[13px] pt-3">
-                <div>
+              <div className="flex items-center flex-wrap sm:flex-nowrap justify-center sm:justify-start text-[13px] pt-3">
+                <div className="text-nowrap">
                   <span className="w-3 h-[6px] bg-primary inline-block mr-2"></span>
                   <span>Principal and Interest</span>
                 </div>
-                <div>
+                <div className="text-nowrap">
                   <span className="w-3 h-[6px] bg-sky-400 inline-block mx-2"></span>
                   <span>Property Tax</span>
                 </div>
-                <div>
+                <div className="text-nowrap">
                   <span className="w-3 h-[6px] bg-red-500 inline-block mx-2"></span>
                   <span>HOA fee</span>
                 </div>
@@ -645,7 +645,7 @@ export default function AllDetails() {
             </div>
 
             {/* right content */}
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <div>
                 <label
                   className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
@@ -685,9 +685,9 @@ export default function AllDetails() {
           </div>
 
           {/* bottom content */}
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             {/* left content */}
-            <div className="w-1/2">
+            <div className="w-full lg:w-1/2">
               <div>
                 <label
                   className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
@@ -723,7 +723,7 @@ export default function AllDetails() {
               </div>
             </div>
             {/* right content */}
-            <div className="w-1/2">
+            <div className="w-full lg:w-1/2">
               <div>
                 <label
                   className="text-[13px] text-black font-medium mt-[13px] mb-1 inline-block"
@@ -786,7 +786,7 @@ export default function AllDetails() {
             >
               <span className="text-black font-medium">Floor Plan A</span>
 
-              <div className="flex items-center gap-3 group-hover:text-primary">
+              <div className="sm:flex hidden items-center gap-3 group-hover:text-primary">
                 <div>
                   <span className="font-medium">Price:</span> $ 600
                 </div>
@@ -815,6 +815,22 @@ export default function AllDetails() {
                 height={1000}
                 alt="floor-plan-a"
               />
+              <div className="bg-gray-50 p-2 mb-1 rounded-md text-sm">
+                <div className="sm:hidden flex items-center gap-3 group-hover:text-primary">
+                  <div>
+                    <span className="font-medium">Price:</span> $ 600
+                  </div>
+                  <div>
+                    <span className="font-medium">Baths:</span> 7
+                  </div>
+                  <div>
+                    <span className="font-medium">Rooms:</span> 5
+                  </div>
+                  <div>
+                    <span className="font-medium">Size:</span> 200 ft2
+                  </div>
+                </div>
+              </div>
               <p className="text-[15px] leading-6">
                 Inside this enchanting home, the great room enjoys a fireplace
                 and views of the rear patio. The secluded master suite at the
@@ -836,7 +852,7 @@ export default function AllDetails() {
             >
               <span className="text-black font-medium">Floor Plan B</span>
 
-              <div className="flex items-center gap-3 group-hover:text-primary">
+              <div className="hidden sm:flex items-center gap-3 group-hover:text-primary">
                 <div>
                   <span className="font-medium">Price:</span> $ 375
                 </div>
@@ -865,6 +881,22 @@ export default function AllDetails() {
                 height={1000}
                 alt="floor-plan-b"
               />
+              <div className="bg-gray-50 p-2 mb-1 rounded-md text-sm">
+                <div className="sm:hidden flex items-center gap-3 group-hover:text-primary">
+                  <div>
+                    <span className="font-medium">Price:</span> $ 600
+                  </div>
+                  <div>
+                    <span className="font-medium">Baths:</span> 7
+                  </div>
+                  <div>
+                    <span className="font-medium">Rooms:</span> 5
+                  </div>
+                  <div>
+                    <span className="font-medium">Size:</span> 200 ft2
+                  </div>
+                </div>
+              </div>
               <p className="text-[15px] leading-6">
                 Living Spaces are more easily interpreted. All-In-Ones color
                 floor plan option clearly defines your listing’s living spaces,
