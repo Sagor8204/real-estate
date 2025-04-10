@@ -815,8 +815,8 @@ export default function AllDetails() {
                 height={1000}
                 alt="floor-plan-a"
               />
-              <div className="bg-gray-50 p-2 mb-1 rounded-md text-sm">
-                <div className="sm:hidden flex items-center gap-3 group-hover:text-primary">
+              <div className="bg-gray-50 sm:hidden p-2 mb-1 rounded-md text-sm">
+                <div className="flex items-center gap-3 group-hover:text-primary">
                   <div>
                     <span className="font-medium">Price:</span> $ 600
                   </div>
@@ -881,8 +881,8 @@ export default function AllDetails() {
                 height={1000}
                 alt="floor-plan-b"
               />
-              <div className="bg-gray-50 p-2 mb-1 rounded-md text-sm">
-                <div className="sm:hidden flex items-center gap-3 group-hover:text-primary">
+              <div className="bg-gray-50 sm:hidden p-2 mb-1 rounded-md text-sm">
+                <div className="flex items-center gap-3 group-hover:text-primary">
                   <div>
                     <span className="font-medium">Price:</span> $ 600
                   </div>
