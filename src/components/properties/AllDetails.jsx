@@ -13,6 +13,8 @@ import { RiGlobalLine } from "react-icons/ri";
 import { BsPerson } from "react-icons/bs";
 import { IoVideocamOutline } from "react-icons/io5";
 import Link from "next/link";
+import WeeklySlider from "./WeeklyDateSlider";
+import StatisticsBar from "./StatisticsBar";
 
 const scores = [
   {
@@ -942,7 +944,9 @@ export default function AllDetails() {
               ? "max-h-0 mt-0 opacity-0"
               : "min-h-fit mt-3 opacity-100"
           }`}
-        ></div>
+        >
+          <StatisticsBar />
+        </div>
       </div>
 
       {/* profile */}
@@ -1067,8 +1071,8 @@ export default function AllDetails() {
             />
           </div>
           <div className="w-1/2">
-            <div className="mb-8 border py-[30px]">
-              will be here weekly calender slider
+            <div className="mb-8 relative">
+              <WeeklySlider />
             </div>
             <div>
               <select className="w-full bg-gray-100 p-3 rounded-md text-sm outline-none mb-3">
