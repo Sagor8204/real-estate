@@ -5,6 +5,14 @@ import { useState } from "react";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import Image from "next/image";
 import { IoPlayCircleOutline } from "react-icons/io5";
+import { IoCallOutline } from "react-icons/io5";
+import { MdOutlinePhoneAndroid } from "react-icons/md";
+import { HiOutlineMail } from "react-icons/hi";
+import { PiSkypeLogoLight } from "react-icons/pi";
+import { RiGlobalLine } from "react-icons/ri";
+import { BsPerson } from "react-icons/bs";
+import { IoVideocamOutline } from "react-icons/io5";
+import Link from "next/link";
 
 const scores = [
   {
@@ -41,6 +49,8 @@ export default function AllDetails() {
     walkscore: false,
     calculator: false,
     floor_plans: false,
+    statistics: false,
+    schedule_tour: false,
   });
   const [floorPlan, setFloorPlan] = useState({
     floor_plan_a: true,
@@ -908,6 +918,217 @@ export default function AllDetails() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Statistics */}
+      <div className="mt-10 bg-white p-6">
+        <div
+          onClick={() => toggleSection("statistics")}
+          className="flex items-center justify-between cursor-pointer"
+        >
+          <h2 className="text-gray-800 font-semibold">Statistics</h2>
+          <button className="text-lg">
+            <IoIosArrowDown
+              className={`transform transition-transform duration-700 rotate-180 ${
+                sections.statistics ? "rotate-0" : ""
+              }`}
+            />
+          </button>
+        </div>
+        <div
+          className={`transition-all duration-700 overflow-hidden ${
+            sections.statistics
+              ? "max-h-0 mt-0 opacity-0"
+              : "min-h-fit mt-3 opacity-100"
+          }`}
+        ></div>
+      </div>
+
+      {/* profile */}
+      <div className="mt-10 bg-white p-6">
+        <div className="flex gap-10 mb-3">
+          <div className="w-1/2">
+            <Image
+              src="/assets/images/property1avatar.webp"
+              width={500}
+              height={500}
+              alt="john-collins"
+              className="rounded-md h-[260px] object-cover"
+            />
+          </div>
+          <div className="w-1/2">
+            <h2 className="text-xl text-black font-medium pb-1">
+              John Collins
+            </h2>
+            <p className="text-sm pb-2">Member ID: 987654321</p>
+
+            <div className="flex items-center gap-2 py-[6px] text-sm">
+              <IoCallOutline className="text-lg" />
+              <span className="text-black">1-800-555-6789</span>
+            </div>
+            <div className="flex items-center gap-2 py-[6px] text-sm">
+              <MdOutlinePhoneAndroid className="text-lg" />
+              <span className="text-black">1-800-555-0000</span>
+            </div>
+            <div className="flex items-center gap-2 py-[6px] text-sm">
+              <HiOutlineMail className="text-lg" />
+              <span className="text-black">John_demo@email.com</span>
+            </div>
+            <div className="flex items-center gap-2 py-[6px] text-sm">
+              <PiSkypeLogoLight className="text-lg" />
+              <span>johnc_demo</span>
+            </div>
+            <div className="flex items-center gap-2 py-[6px] text-sm">
+              <RiGlobalLine className="text-lg" />
+              <span className="text-black">paris.wpresidence.net/</span>
+            </div>
+            <div className="flex text-sm py-[6px]">
+              <span className="text-gray-500 font-medium">Member Of:</span>
+              Global Real Estate Professionals Network (GREP)
+            </div>
+          </div>
+        </div>
+        {/* contact form */}
+        <div>
+          <div className="flex items-center gap-5 mb-2">
+            <h1 className="text-lg font-medium text-black">Contact Me</h1>
+            <button className="bg-primary text-white py-1 px-2 rounded-md text-xs">
+              Schedule a showing?
+            </button>
+          </div>
+          <form>
+            <div className="flex items-center gap-2 mb-2">
+              <input
+                className="w-full py-[10px] px-4 rounded-md text-sm border outline-none"
+                type="text"
+                placeholder="Your Name"
+              />
+              <input
+                className="w-full py-[10px] px-4 rounded-md text-sm border outline-none"
+                type="text"
+                placeholder="Your Email"
+              />
+              <input
+                className="w-full py-[10px] px-4 rounded-md text-sm border outline-none"
+                type="text"
+                placeholder="Your Phone"
+              />
+            </div>
+            <textarea
+              rows="7"
+              className="border outline-none w-full px-4 py-[10px] rounded-md text-sm mb-2"
+              placeholder="I'm interested in [ Luxury House in Greenville ]"
+            ></textarea>
+            <div className="flex items-center gap-2">
+              <button className="rounded-md border border-primary px-5 py-2 text-white bg-primary font-medium text-sm">
+                Send Mail
+              </button>
+              <button className="rounded-md border border-primary px-5 py-2 text-primary font-medium text-sm">
+                Call 1-800-555-0000
+              </button>
+              <button className="rounded-md border border-primary px-5 py-2 text-primary font-medium text-sm">
+                WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {/* Schedule a tour */}
+      <div className="mt-10 bg-white p-6">
+        <div
+          onClick={() => toggleSection("schedule_tour")}
+          className="flex items-center justify-between cursor-pointer"
+        >
+          <h2 className="text-gray-800 font-semibold">Schedule a tour</h2>
+          <button className="text-lg">
+            <IoIosArrowDown
+              className={`transform transition-transform duration-700 rotate-180 ${
+                sections.schedule_tour ? "rotate-0" : ""
+              }`}
+            />
+          </button>
+        </div>
+        <div
+          className={`transition-all duration-700 overflow-hidden flex gap-8 ${
+            sections.schedule_tour
+              ? "max-h-0 mt-0 opacity-0"
+              : "min-h-fit mt-3 opacity-100"
+          }`}
+        >
+          <div className="w-1/2">
+            <Image
+              src="/assets/images/property1.webp"
+              width={1000}
+              height={1000}
+              alt="property"
+              className="rounded-md h-[597px] object-cover"
+            />
+          </div>
+          <div className="w-1/2">
+            <div className="mb-8 border py-[30px]">
+              will be here weekly calender slider
+            </div>
+            <div>
+              <select className="w-full bg-gray-100 p-3 rounded-md text-sm outline-none mb-3">
+                <option value="">Please select the time</option>
+                <option value="">10:00 am</option>
+                <option value="">10:30 am</option>
+                <option value="">11:00 am</option>
+                <option value="">11:30 am</option>
+                <option value="">12:00 pm</option>
+                <option value="">12:30 pm</option>
+                <option value="">01:00 pm</option>
+                <option value="">01:30 pm</option>
+                <option value="">02:00 pm</option>
+                <option value="">02:30 pm</option>
+              </select>
+              <div className="flex items-center gap-3 mb-3">
+                <button className="flex items-center gap-2 border border-primary text-sm py-3 w-full justify-center rounded-md">
+                  <BsPerson className="text-lg" /> In Person
+                </button>
+                <button className="flex items-center gap-2 border text-sm py-3 w-full justify-center rounded-md">
+                  <IoVideocamOutline className="text-lg" /> Video Chat
+                </button>
+              </div>
+              <div>
+                <input
+                  className="w-full p-2 rounded-md text-sm border outline-none mb-3"
+                  type="text"
+                  placeholder="Your Name"
+                />
+                <input
+                  className="w-full p-2 rounded-md text-sm border outline-none mb-3"
+                  type="email"
+                  placeholder="Your Email"
+                />
+                <input
+                  className="w-full p-2 rounded-md text-sm border outline-none mb-3"
+                  type="number"
+                  placeholder="Your Phone"
+                />
+                <textarea
+                  className="w-full border outline-none rounded-md text-sm p-2 mb-3"
+                  rows="7"
+                ></textarea>
+              </div>
+
+              <button className="w-full bg-primary text-white font-semibold py-2 rounded-md text-[15px] mb-2">
+                Send Email
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Property Reviews */}
+      <div className="mt-10 bg-white p-6">
+        <h2 className="text-gray-800 font-semibold text-lg pb-[10px]">
+          Property Reviews
+        </h2>
+        <div className="bg-gray-100 text-sm p-1 px-2 text-gray-700 font-medium rounded-md">
+          You need to <Link href="/">login</Link> in order to post a review
         </div>
       </div>
     </>
