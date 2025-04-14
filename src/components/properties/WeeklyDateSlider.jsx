@@ -3,7 +3,7 @@ import { useState } from "react";
 import { format, addDays, startOfWeek } from "date-fns";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function WeeklySlider() {
+export default function WeeklySlider({ tabSchedule }) {
   const [currentWeekStart, setCurrentWeekStart] = useState(
     startOfWeek(new Date(), { weekStartsOn: 1 })
   );
@@ -31,15 +31,23 @@ export default function WeeklySlider() {
   return (
     <div className="relative w-full max-w-sm mx-auto">
       <button
-        className="absolute top-1/2 -left-[7px] -translate-y-1/2 z-10"
+        className={`absolute top-1/2 ${
+          tabSchedule ? "-left-[21px]" : "-left-[7px]"
+        } -translate-y-1/2 z-10`}
         onClick={() => handleTransition("left")}
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
 
-      <div className="w-[342px] overflow-hidden border rounded-md">
+      <div
+        className={`${
+          tabSchedule ? "w-[300px]" : "w-[342px]"
+        } overflow-hidden rounded-md`}
+      >
         <div
-          className={`flex space-x-2 transition-transform duration-300 ease-in-out`}
+          className={`flex ${
+            tabSchedule ? "space-x-3" : "space-x-2"
+          } transition-transform duration-300 ease-in-out`}
           style={{
             transform:
               isAnimating && direction === "left"
@@ -52,7 +60,9 @@ export default function WeeklySlider() {
           {days.map((day) => (
             <div
               key={day.toISOString()}
-              className={`flex flex-col items-center min-w-[62px] py-2 border rounded-md cursor-pointer transition-all ${
+              className={`flex flex-col items-center ${
+                tabSchedule ? "min-w-[66px]" : "min-w-[62px]"
+              } py-2 border rounded-md cursor-pointer transition-all ${
                 format(day, "yyyy-MM-dd") === format(selectedDate, "yyyy-MM-dd")
                   ? "bg-blue-600 text-white"
                   : "hover:bg-blue-100"
@@ -68,7 +78,9 @@ export default function WeeklySlider() {
       </div>
 
       <button
-        className="absolute top-1/2 -right-[7px] -translate-y-1/2 z-10"
+        className={`absolute top-1/2 ${
+          tabSchedule ? "-right-[16px]" : "-right-[7px]"
+        } -translate-y-1/2 z-10`}
         onClick={() => handleTransition("right")}
       >
         <ChevronRight className="w-6 h-6" />
