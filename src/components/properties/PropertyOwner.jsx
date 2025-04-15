@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { act, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosCall } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
 import WeeklySlider from "./WeeklyDateSlider";

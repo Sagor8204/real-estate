@@ -104,7 +104,7 @@ export default function Header() {
             <FaUser className="text-[15px]" />
           </div>
 
-          <Button text="Add Listing" />
+          <Button text="Add Listing" custom="before:bg-black" />
         </div>
       </div>
 

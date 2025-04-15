@@ -59,7 +59,10 @@ export default function Testimonials() {
 
       <div className="max-w-[1140px] mx-auto pb-20 grid grid-cols-1 lg:grid-cols-3 gap-8 px-5 lg:px-0">
         {datas.map((data) => (
-          <div className="rounded-md p-10 bg-white shadow-sm" key={data.name}>
+          <div
+            className="rounded-md p-10 bg-white shadow-sm border"
+            key={data.name}
+          >
             <div className="flex items-center gap-8 pb-6">
               <Image
                 src={data.image}

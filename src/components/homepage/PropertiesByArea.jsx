@@ -4,7 +4,7 @@ import PropertyAreaCard from "./PropertyAreaCard";
 
 export default function PropertiesByArea() {
   return (
-    <div className="bg-primary-50">
+    <div className="section pt-16">
       <Heading
         title="Properties by Area"
         desc="Highlight the best of your properties by using the List Category
@@ -13,7 +13,7 @@ export default function PropertiesByArea() {
       />
 
       <div className="px-5">
-        <div className="max-w-[1100px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 bg-white lg:mx-auto px-8 py-12 rounded-md shadow-custom-blue">
+        <div className="max-w-[1100px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 bg-white lg:mx-auto p-12 rounded-md shadow-custom-blue">
           {propetiesAreaData.map((property) => (
             <PropertyAreaCard key={property.id} data={property} />
           ))}

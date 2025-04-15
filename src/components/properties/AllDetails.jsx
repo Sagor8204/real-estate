@@ -951,8 +951,8 @@ export default function AllDetails() {
 
       {/* profile */}
       <div className="mt-10 bg-white p-6">
-        <div className="flex gap-10 mb-3">
-          <div className="w-1/2">
+        <div className="flex-col md:flex gap-10 mb-3">
+          <div className="w-full md:w-1/2 mb-3 md:mb-0">
             <Image
               src="/assets/images/property1avatar.webp"
               width={500}
@@ -961,7 +961,7 @@ export default function AllDetails() {
               className="rounded-md h-[260px] object-cover"
             />
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <h2 className="text-xl text-black font-medium pb-1">
               John Collins
             </h2>
@@ -1002,14 +1002,14 @@ export default function AllDetails() {
             </button>
           </div>
           <form>
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex-col md:flex items-center gap-2 mb-2">
               <input
-                className="w-full py-[10px] px-4 rounded-md text-sm border outline-none"
+                className="w-full py-[10px] px-4 rounded-md text-sm border outline-none mb-2 md:mb-0"
                 type="text"
                 placeholder="Your Name"
               />
               <input
-                className="w-full py-[10px] px-4 rounded-md text-sm border outline-none"
+                className="w-full py-[10px] px-4 rounded-md text-sm border outline-none mb-2 md:mb-0"
                 type="text"
                 placeholder="Your Email"
               />
@@ -1024,14 +1024,14 @@ export default function AllDetails() {
               className="border outline-none w-full px-4 py-[10px] rounded-md text-sm mb-2"
               placeholder="I'm interested in [ Luxury House in Greenville ]"
             ></textarea>
-            <div className="flex items-center gap-2">
-              <button className="rounded-md border border-primary px-5 py-2 text-white bg-primary font-medium text-sm">
+            <div className="flex-col flex md:flex-row items-center gap-2">
+              <button className="rounded-md border border-primary w-full md:w-fit mb-2 md:mb-0 px-5 py-2 text-white bg-primary font-medium text-sm">
                 Send Mail
               </button>
-              <button className="rounded-md border border-primary px-5 py-2 text-primary font-medium text-sm">
+              <button className="rounded-md border border-primary w-full md:w-fit mb-2 md:mb-0 px-5 py-2 text-primary font-medium text-sm">
                 Call 1-800-555-0000
               </button>
-              <button className="rounded-md border border-primary px-5 py-2 text-primary font-medium text-sm">
+              <button className="rounded-md border border-primary w-full md:w-fit px-5 py-2 text-primary font-medium text-sm">
                 WhatsApp
               </button>
             </div>
@@ -1061,7 +1061,7 @@ export default function AllDetails() {
               : "min-h-fit mt-3 opacity-100"
           }`}
         >
-          <div className="w-1/2">
+          <div className="hidden md:block w-1/2">
             <Image
               src="/assets/images/property1.webp"
               width={1000}
@@ -1070,7 +1070,7 @@ export default function AllDetails() {
               className="rounded-md h-[597px] object-cover"
             />
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <div className="mb-8 relative">
               <WeeklySlider />
             </div>

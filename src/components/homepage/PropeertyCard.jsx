@@ -24,7 +24,7 @@ export default function PropertyCard({ data }) {
   return (
     <div
       onClick={() => handleClick(data.id, data.title)}
-      className={`bg-white rounded-md shadow-sm overflow-hidden cursor-pointer ${styles.property_card}`}
+      className={`bg-white rounded-md shadow-sm overflow-hidden cursor-pointer border ${styles.property_card}`}
     >
       <div className="h-auto overflow-hidden relative">
         <Image

@@ -32,7 +32,7 @@ const datas = [
 
 export default function FeaturedProperty() {
   return (
-    <div className={`${styles.linear_gradient} bg-primary-50`}>
+    <div className={`${styles.linear_gradient}`}>
       <Heading
         title="Featured Properties"
         desc="Here are two listings displayed with the featured property shortcode, which you can use when you have some special properties to present."

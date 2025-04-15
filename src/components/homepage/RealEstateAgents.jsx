@@ -51,7 +51,7 @@ export default function RealEstateAgents() {
       <div className="max-w-[1140px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20 px-5 lg:px-0">
         {datas.map((data) => (
           <div
-            className="bg-white rounded-md group cursor-pointer"
+            className="bg-white rounded-md group cursor-pointer shadow-custom-blue"
             key={data.id}
           >
             <Link href={`/agents/${agentSlug(data.name)}`}>

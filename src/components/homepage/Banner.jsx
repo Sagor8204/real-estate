@@ -26,7 +26,7 @@ export default function Banner({ category }) {
       </div>
 
       {category == "home" && (
-        <div className="bg-primary-50">
+        <div className="absolute w-full">
           <PropertyFilter />
         </div>
       )}

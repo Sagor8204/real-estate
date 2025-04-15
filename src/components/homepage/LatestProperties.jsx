@@ -82,7 +82,7 @@ export default function LatestProperties() {
         <div className="flex justify-center mt-7">
           <Button
             text="Load More Listings"
-            custom="w-[180px] text-xs py-[10px]"
+            custom="w-[180px] text-xs py-[10px] before:bg-black"
           />
         </div>
       </div>

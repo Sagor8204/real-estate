@@ -76,7 +76,11 @@ export default function PropertyFilter() {
           </div>
 
           <div className="self-end mt-2 lg:mt-0">
-            <Button icon={IoIosSearch} text="Search" custom="w-full" />
+            <Button
+              icon={IoIosSearch}
+              text="Search"
+              custom="w-full before:bg-white hover:text-primary"
+            />
           </div>
         </div>
       )}
@@ -129,7 +133,11 @@ export default function PropertyFilter() {
           </div>
 
           <div className="self-end mt-2 lg:mt-0">
-            <Button icon={IoIosSearch} text="Search" custom="w-full" />
+            <Button
+              icon={IoIosSearch}
+              text="Search"
+              custom="w-full before:bg-white hover:text-primary"
+            />
           </div>
         </div>
       )}
@@ -171,7 +179,11 @@ export default function PropertyFilter() {
           </div>
 
           <div className="self-end mt-2 lg:mt-0">
-            <Button icon={IoIosSearch} text="Search" custom="w-full" />
+            <Button
+              icon={IoIosSearch}
+              text="Search"
+              custom="w-full before:bg-white hover:text-primary"
+            />
           </div>
         </div>
       )}
