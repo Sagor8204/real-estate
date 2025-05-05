@@ -1,7 +1,6 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/ui/Header";
-import Footer from "@/components/ui/Footer";
+import LayoutWrapper from "./LayoutWrapper";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,9 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );
