@@ -1,7 +1,10 @@
 "use client";
+import Cookies from "js-cookie";
 
+import Link from "next/link";
 import { useState } from "react";
 import { FaGoogle, FaGithub, FaFacebook } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -10,6 +13,7 @@ export default function LoginPage() {
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const router = useRouter();
 
   const handleChange = (e) => {
     setFormData({
@@ -24,22 +28,26 @@ export default function LoginPage() {
     setSuccess("");
 
     try {
-      const res = await fetch("/api/login", {
+      const res = await fetch("http://127.0.0.1:8000/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      const data = await res.json();
 
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.message || "Login failed");
       }
 
+      // Store token in cookie (expires in 7 days)
+      Cookies.set("access_token", data.tokens.access, { expires: 7 });
+
       setSuccess("Login successful!");
       setFormData({ email: "", password: "" });
 
-      // Redirect logic (optional):
-      // window.location.href = '/dashboard'
+      router.push("/");
     } catch (err) {
       setError(err.message);
     }
@@ -102,6 +110,13 @@ export default function LoginPage() {
           Sign in with Facebook
         </button>
       </div>
+
+      <Link
+        className="flex items-center justify-center py-2 font-semibold"
+        href="/register"
+      >
+        Register
+      </Link>
     </div>
   );
 }

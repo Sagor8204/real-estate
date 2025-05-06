@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { FaGoogle, FaGithub, FaFacebook } from "react-icons/fa";
 
@@ -25,7 +26,7 @@ export default function RegisterPage() {
     setSuccess("");
 
     try {
-      const res = await fetch("/api/register", {
+      const res = await fetch("http://127.0.0.1:8000/register/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -109,6 +110,13 @@ export default function RegisterPage() {
           Sign in with Facebook
         </button>
       </div>
+
+      <Link
+        className="flex items-center justify-center py-2 font-semibold"
+        href="/login"
+      >
+        Login
+      </Link>
     </div>
   );
 }

@@ -96,13 +96,15 @@ export default function Header() {
             <FaPhoneAlt className="mt-[3px]" />
             <span className="font-semibold">+54823556+568</span>
           </div>
-          <div
-            className={`flex gap-1 w-6 h-6 rounded-full p-1 items-center justify-center ${
-              isScrolled ? "bg-primary text-white" : "bg-white text-gray-700"
-            }`}
-          >
-            <FaUser className="text-[15px]" />
-          </div>
+          <Link href="/login">
+            <div
+              className={`flex gap-1 w-6 h-6 rounded-full p-1 items-center justify-center ${
+                isScrolled ? "bg-primary text-white" : "bg-white text-gray-700"
+              }`}
+            >
+              <FaUser className="text-[15px]" />
+            </div>
+          </Link>
 
           <Button text="Add Listing" custom="before:bg-black" />
         </div>
