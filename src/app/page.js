@@ -19,7 +19,28 @@ export default function Home() {
   useEffect(() => {
     const accessToken = Cookies.get("access_token");
     setToken(accessToken);
-    console.log("Token from cookie:", accessToken);
+
+    if (accessToken) {
+      fetch("http://127.0.0.1:8000/user-list/", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Failed to fetch user list");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          console.log("User List:", data);
+        })
+        .catch((err) => {
+          console.error("Error fetching user list:", err.message);
+        });
+    }
   }, []);
 
   return (
